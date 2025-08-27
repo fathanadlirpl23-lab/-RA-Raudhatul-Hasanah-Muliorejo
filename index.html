@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TK RA Raudhatul Hasana Muliorjo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #4e8cff;
+            --secondary: #ff9d4e;
+            --accent: #6cbf5e;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            border: 3px solid var(--secondary);
+            overflow: hidden;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .school-name h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .school-name p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            padding: 0.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero {
+            background: url('sekolah.jpeg') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+            background-color: rgba(78, 140, 255, 0.8);
+            border-radius: 10px;
+        }
+        
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #5aaf4c;
+            transform: translateY(-3px);
+        }
+        
+        section {
+            padding: 3rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            border-radius: 10px;
+        }
+        
+        .programs {
+            background-color: var(--light);
+        }
+        
+        .program-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        
+        .program-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .program-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .program-info {
+            padding: 1.5rem;
+        }
+        
+        .program-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .map {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .social-links {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 400px;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Logo RA Raudhatul Hasanah">
+            </div>
+            <div class="school-name">
+                <h1>RA Raudhatul Hasanah Muliorejo</h1>
+                <p>Mendidik dengan Cinta, Mengajar dengan Hati</p>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="#about"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+            <li><a href="#programs"><i class="fas fa-book-reader"></i> Program</a></li>
+            <li><a href="#gallery"><i class="fas fa-images"></i> Galeri</a></li>
+            <li><a href="#contact"><i class="fas fa-phone-alt"></i> Kontak</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Selamat Datang di RA Raudhatul Hasanah</h2>
+            <p>Membentuk generasi cerdas, kreatif, dan berakhlak mulia</p>
+            <a href="#contact" class="btn">Hubungi Kami</a>
+        </div>
+    </section>
+    
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Kami</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>RA Raudhatul Hasanah Muliorejo adalah lembaga pendidikan anak usia dini yang berkomitmen untuk memberikan pendidikan terbaik dengan pendekatan yang menyenangkan dan islami.</p>
+                    <p>Kami didirikan dengan visi menjadi lembaga pendidikan anak usia dini unggulan yang mencetak generasi yang cerdas, kreatif, dan berakhlak mulia.</p>
+                    <p>Fasilitas yang kami sediakan lengkap dan nyaman untuk mendukung kegiatan belajar mengajar, termasuk ruang kelas yang luas, area bermain, perpustakaan mini, dan fasilitas pendukung lainnya.</p>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="programs" class="programs">
+        <div class="container">
+            <h2 class="section-title">Program Kami</h2>
+            <div class="program-cards">
+                <div class="program-card">
+                    <img src="sekolah.jpeg" alt="Program Kelompok Bermain">
+                    <div class="program-info">
+                        <h3>Kelompok Bermain</h3>
+                        <p>Untuk anak usia 2-3 tahun, fokus pada pengembangan motorik dan sosialisasi melalui bermain.</p>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <img src="lokal2.jpeg" alt="Program TK A">
+                    <div class="program-info">
+                        <h3>TK A</h3>
+                        <p>Untuk anak usia 4-5 tahun, pengenalan dasar-dasar akademik dan nilai-nilai agama.</p>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <img src="lokal1.jpeg" alt="Program TK B">
+                    <div class="program-info">
+                        <h3>TK B</h3>
+                        <p>Untuk anak usia 5-6 tahun, persiapan masuk SD dengan penguatan akademik dan karakter.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Kontak Kami</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informasi Kontak</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Alamat Sekolah : km 12 JL Pembangunan Muliorejo Dsn XVIII kebun baru</p>
+                    <p><i class="fas fa-phone"></i> 0852-9636-1170 </p>
+                    <p><i class="fas fa-envelope"></i> raudhatulhasanahmlj@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Senin - Kamis: 07:30 - 10:30</p>
+                    <p><i class="fas fa-clock"></i> jumat - Sabtu: 07:30 - 10:00</p>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.317239755713!2d106.81926135068657!3d-6.352963295356852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec1c505a29b1%3A0xce5c18e4d9b4bf68!2sMonumen%20Nasional!5e0!3m2!1sen!2sid!4v1658294796218!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2023 RA Raudhatul Hasanah Muliorejo. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
